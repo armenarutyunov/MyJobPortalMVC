@@ -1,0 +1,52 @@
+﻿@model  IEnumerable<MVC_CORE.Models.Job>
+
+@{
+    ViewBag.Title = "My Profile";
+}
+
+<h2>Details of This Position</h2>
+
+@foreach (var item in Model)
+{
+    <hr />
+    <table class="table">
+        <tr><th>Profile's Entities</th><th>Values</th>
+        <tr />
+
+        <tr><td>Job's Name</td><td> @Html.DisplayFor(modelItem => item.JobName)</td>
+        <tr />
+        <tr><td>Job's Description</td><td>@Html.DisplayFor(modelItem => item.JobDescription)</td>
+        <tr />
+        <tr><td>Major</td><td> @Html.DisplayFor(modelItem => item.Major)</td>
+        <tr />
+        <tr><td>Major Importance</td><td> @Html.DisplayFor(modelItem => item.MajorImp)</td>
+        <tr />
+        <tr><td>Skill </td><td>@Html.DisplayFor(modelItem => item.Skill)</td>
+        <tr />
+        <tr><td>Skill Level</td><td> @Html.DisplayFor(modelItem => item.SkillLevel)</td>
+        <tr />
+        <tr><td>Skill Importance</td><td> @Html.DisplayFor(modelItem => item.SkillImp) </td>
+        <tr />
+        <tr><td>Date of Creation</td><td> @Html.DisplayFor(modelItem => item.ProfileCreated) </td>
+        <tr />
+
+    </table>
+    <h3><b>Pick Up Action</b></h3>
+
+    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+    <hr /><br />
+
+}
+          <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+
+
+                  <li>@Html.ActionLink("My Profile Management Page", "CvmPlayer", "Company_Login")</li>
+                  <li>@Html.ActionLink("Show My List of Positions", "ShowAll", "Job")</li>
+                  <li>@Html.ActionLink("Create New Position", "Create", "Job")</li>
+
+              </ul>
+          </div>
+
+

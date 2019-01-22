@@ -1,0 +1,125 @@
+﻿@using MVC_CORE.Models
+@model CompanyVM
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are You Sure You Want To Delete Your Profile?</h3>
+<h2><b><u>Be Inform, That All Company's Infromation, Including Posted Jobs, Will Be Deleted As Well!</u></b></h2>
+<div>
+    <h4>Current Profile</h4>
+    <table class="table">
+        <tr><th>Profile's Entities</th><th>Values</th>
+        <tr />
+
+        <tr><td>Company Name</td><td> @Html.DisplayFor(modelItem => Model.CompanyName)</td>
+        <tr />
+        <tr><td>Company Description</td><td>@Html.DisplayFor(modelItem => Model.CompanyDescription)</td>
+        <tr />
+        <tr><td>Company Website</td><td> @Html.DisplayFor(modelItem => Model.CompanyWebsite)</td>
+        <tr />
+        <tr><td>Contact Name</td><td> @Html.DisplayFor(modelItem => Model.ContactName)</td>
+        <tr />
+        <tr><td>Contact Phone</td><td>@Html.DisplayFor(modelItem => Model.ContactPhone)</td>
+        <tr />
+        <tr><td>Preferable Language</td><td> @Html.DisplayFor(modelItem => Model.LanguageId)</td>
+        <tr />
+        <tr><td>Registration Date</td><td> @Html.DisplayFor(modelItem => Model.RegistrationDate) </td>
+        <tr />
+        <tr><td>Country</td><td> @Html.DisplayFor(modelItem => Model.Country)</td>
+        <tr />
+        <tr><td>Province</td><td> @Html.DisplayFor(modelItem => Model.Province)</td>
+        <tr />
+        <tr><td>City</td><td>@Html.DisplayFor(modelItem => Model.City)</td>
+        <tr />
+        <tr><td>Street</td><td> @Html.DisplayFor(modelItem => Model.Street)</td>
+        <tr />
+        <tr><td>Postal Code</td><td> @Html.DisplayFor(modelItem => Model.Postal_Code) </td>
+
+        <tr />
+
+    </table>
+    @*<hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Company Name
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CompanyName)
+            </dd>
+
+            <dt>
+                Company Description
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CompanyDescription)
+            </dd>
+
+            <dt>
+                Company Website
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CompanyWebsite)
+            </dd>
+
+            <dt>
+                Contact Name
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ContactName)
+            </dd>
+
+            <dt>
+                Contact Phone
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ContactPhone)
+            </dd>
+
+            <dt>
+                Preffered Language
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LanguageId)
+            </dd>
+
+            <dt>
+                Profile Created
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RegistrationDate)
+            </dd>
+
+
+        </dl>*@
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" />
+        </div>
+    }
+</div>
+
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+
+
+        <li>@Html.ActionLink("My Profile Management Page", "CvmPlayer", "Company_Login")</li>
+        <li>@Html.ActionLink("Show My List of Positions", "ShowAll", "Job")</li>
+        <li>@Html.ActionLink("Create New Position", "Create", "Job")</li>
+
+    </ul>
+</div>
+ 

@@ -1,0 +1,64 @@
+﻿@model DAL.Company_Descriptions
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Company_Descriptions</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Company_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Company_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Company_Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Company_Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Time_Stamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Time_Stamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Company_Profiles.Company_Website)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Company_Profiles.Company_Website)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.System_Language_Codes.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.System_Language_Codes.Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

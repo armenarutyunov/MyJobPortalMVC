@@ -1,0 +1,23 @@
+C:\Users\Armen\source\repos\CareerCloud\CareerCloud.DataAccessLayer\bin\Debug\CareerCloud.DataAccessLayer.dll
+C:\Users\Armen\source\repos\CareerCloud\CareerCloud.DataAccessLayer\bin\Debug\CareerCloud.DataAccessLayer.pdb
+C:\Users\Armen\source\repos\CareerCloud\CareerCloud.DataAccessLayer\obj\Debug\CareerCloud.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Armen\source\repos\CareerCloud\CareerCloud.DataAccessLayer\obj\Debug\CareerCloud.DataAccessLayer.dll
+C:\Users\Armen\source\repos\CareerCloud\CareerCloud.DataAccessLayer\obj\Debug\CareerCloud.DataAccessLayer.pdb
+C:\Users\Armen\Desktop\HUMBER COLLEGE\COURSES\C#\ZIP\CareerCloud\CareerCloud.DataAccessLayer\bin\Debug\CareerCloud.DataAccessLayer.dll
+C:\Users\Armen\Desktop\HUMBER COLLEGE\COURSES\C#\ZIP\CareerCloud\CareerCloud.DataAccessLayer\bin\Debug\CareerCloud.DataAccessLayer.pdb
+C:\Users\Armen\Desktop\HUMBER COLLEGE\COURSES\C#\ZIP\CareerCloud\CareerCloud.DataAccessLayer\obj\Debug\CareerCloud.DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\Armen\Desktop\HUMBER COLLEGE\COURSES\C#\ZIP\CareerCloud\CareerCloud.DataAccessLayer\obj\Debug\CareerCloud.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Armen\Desktop\HUMBER COLLEGE\COURSES\C#\ZIP\CareerCloud\CareerCloud.DataAccessLayer\obj\Debug\CareerCloud.DataAccessLayer.dll
+C:\Users\Armen\Desktop\HUMBER COLLEGE\COURSES\C#\ZIP\CareerCloud\CareerCloud.DataAccessLayer\obj\Debug\CareerCloud.DataAccessLayer.pdb
+C:\Users\Armen\Desktop\HUMBER COLLEGE\MVC\CareerCloud_MVC\CareerCloud.DataAccessLayer\bin\Debug\CareerCloud.DataAccessLayer.dll
+C:\Users\Armen\Desktop\HUMBER COLLEGE\MVC\CareerCloud_MVC\CareerCloud.DataAccessLayer\bin\Debug\CareerCloud.DataAccessLayer.pdb
+C:\Users\Armen\Desktop\HUMBER COLLEGE\MVC\CareerCloud_MVC\CareerCloud.DataAccessLayer\obj\Debug\CareerCloud.DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\Armen\Desktop\HUMBER COLLEGE\MVC\CareerCloud_MVC\CareerCloud.DataAccessLayer\obj\Debug\CareerCloud.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Armen\Desktop\HUMBER COLLEGE\MVC\CareerCloud_MVC\CareerCloud.DataAccessLayer\obj\Debug\CareerCloud.DataAccessLayer.dll
+C:\Users\Armen\Desktop\HUMBER COLLEGE\MVC\CareerCloud_MVC\CareerCloud.DataAccessLayer\obj\Debug\CareerCloud.DataAccessLayer.pdb
+C:\Users\Armen\Desktop\HUMBER COLLEGE\MVC\MyJobPortalMVC\CareerCloud.DataAccessLayer\bin\Debug\CareerCloud.DataAccessLayer.dll
+C:\Users\Armen\Desktop\HUMBER COLLEGE\MVC\MyJobPortalMVC\CareerCloud.DataAccessLayer\bin\Debug\CareerCloud.DataAccessLayer.pdb
+C:\Users\Armen\Desktop\HUMBER COLLEGE\MVC\MyJobPortalMVC\CareerCloud.DataAccessLayer\obj\Debug\CareerCloud.DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\Armen\Desktop\HUMBER COLLEGE\MVC\MyJobPortalMVC\CareerCloud.DataAccessLayer\obj\Debug\CareerCloud.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Armen\Desktop\HUMBER COLLEGE\MVC\MyJobPortalMVC\CareerCloud.DataAccessLayer\obj\Debug\CareerCloud.DataAccessLayer.dll
+C:\Users\Armen\Desktop\HUMBER COLLEGE\MVC\MyJobPortalMVC\CareerCloud.DataAccessLayer\obj\Debug\CareerCloud.DataAccessLayer.pdb

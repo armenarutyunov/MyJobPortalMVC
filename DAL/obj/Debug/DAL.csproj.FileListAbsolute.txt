@@ -1,0 +1,12 @@
+C:\Users\Armen\Desktop\HUMBER COLLEGE\MVC\MyJobPortalMVC\DAL\bin\Debug\DAL.dll.config
+C:\Users\Armen\Desktop\HUMBER COLLEGE\MVC\MyJobPortalMVC\DAL\bin\Debug\DAL.dll
+C:\Users\Armen\Desktop\HUMBER COLLEGE\MVC\MyJobPortalMVC\DAL\bin\Debug\DAL.pdb
+C:\Users\Armen\Desktop\HUMBER COLLEGE\MVC\MyJobPortalMVC\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Armen\Desktop\HUMBER COLLEGE\MVC\MyJobPortalMVC\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Armen\Desktop\HUMBER COLLEGE\MVC\MyJobPortalMVC\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Armen\Desktop\HUMBER COLLEGE\MVC\MyJobPortalMVC\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Armen\Desktop\HUMBER COLLEGE\MVC\MyJobPortalMVC\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\Armen\Desktop\HUMBER COLLEGE\MVC\MyJobPortalMVC\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Armen\Desktop\HUMBER COLLEGE\MVC\MyJobPortalMVC\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Armen\Desktop\HUMBER COLLEGE\MVC\MyJobPortalMVC\DAL\obj\Debug\DAL.dll
+C:\Users\Armen\Desktop\HUMBER COLLEGE\MVC\MyJobPortalMVC\DAL\obj\Debug\DAL.pdb

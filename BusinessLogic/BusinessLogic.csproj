@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5E708ED8-EBDA-42B1-A0F2-34C62F2701A1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusinessLogic</RootNamespace>
+    <AssemblyName>BusinessLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Security_Logins_Logic.cs" />
+    <Compile Include="Security_Logins_Log_Logic.cs" />
+    <Compile Include="Security_Logins_Roles_Logic.cs" />
+    <Compile Include="Security_Roles_Logic.cs" />
+    <Compile Include="System_Country_Codes_Logic.cs" />
+    <Compile Include="System_Language_Codes_Logic.cs" />
+    <Compile Include="Applicant_Work_History_Logic.cs" />
+    <Compile Include="Company_Descriptions_Logic.cs" />
+    <Compile Include="Company_Jobs_Descriptions_Logic.cs" />
+    <Compile Include="Company_Job_Educations_Logic.cs" />
+    <Compile Include="Company_Jobs_Logic.cs" />
+    <Compile Include="Company_Job_Skills_Logic.cs" />
+    <Compile Include="Company_Locations_Logic.cs" />
+    <Compile Include="Company_Profiles_Logic.cs" />
+    <Compile Include="Applicant_Skills_Logic.cs" />
+    <Compile Include="Applicant_Resumes_Logic.cs" />
+    <Compile Include="Applicant_Profiles_Logic.cs" />
+    <Compile Include="Applicant_Job_Applications_Logic.cs" />
+    <Compile Include="Applicant_Educations_Logic.cs" />
+    <Compile Include="BaseLogic.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidationException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CareerCloud.DataAccessLayer\CareerCloud.DataAccessLayer.csproj">
+      <Project>{796CCFE4-CE62-4A19-9A1C-D634C0FAB800}</Project>
+      <Name>CareerCloud.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CareerCloud.EntityFrameworkDataAccess\CareerCloud.EntityFrameworkDataAccess.csproj">
+      <Project>{E42E04B8-DDC1-4A9C-870D-D49001F055E1}</Project>
+      <Name>CareerCloud.EntityFrameworkDataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{4FDC5E11-9BE3-411F-AC82-44042EB9D2B7}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

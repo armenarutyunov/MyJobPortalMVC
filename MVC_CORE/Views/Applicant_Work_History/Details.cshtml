@@ -1,0 +1,106 @@
+﻿@model DAL.Applicant_Work_History
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Applicant_Work_History</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Company_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Company_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job_Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job_Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job_Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job_Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Start_Month)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Start_Month)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Start_Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Start_Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.End_Month)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.End_Month)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.End_Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.End_Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Time_Stamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Time_Stamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Applicant_Profiles.Currency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Applicant_Profiles.Currency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.System_Country_Codes.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.System_Country_Codes.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

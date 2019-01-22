@@ -1,0 +1,50 @@
+﻿@model DAL.Security_Logins_Log
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Security_Logins_Log</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Source_IP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Source_IP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Logon_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Logon_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Is_Succesful)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Is_Succesful)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Security_Logins.Login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Security_Logins.Login)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

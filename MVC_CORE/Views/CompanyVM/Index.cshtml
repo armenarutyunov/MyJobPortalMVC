@@ -1,0 +1,183 @@
+﻿@using MVC_CORE.Models
+@model CompanyVM
+@{
+    ViewBag.Title = "Company's Profile";
+}
+
+<h1><b>Congratulations, You Have Registered!</b></h1>
+<h4>Every Time When You Sign In, Use Your Company Website as a Login and Your Contact Phone as a Password.</h4>
+<h3><u>Your Current Profile</u></h3>
+
+
+
+
+    @Html.AntiForgeryToken()
+
+
+    <div class="form-horizontal">
+        <h3><b>Main Parameters</b></h3>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <table class="table">
+            <tr>
+                <th>
+                    <h4><i>Company Name</i></h4>
+                </th>
+                <th>
+                    <h4><i>Company Website</i></h4>
+                </th>
+                <th>
+                    <h4><i>Contact Name</i></h4>
+                </th>
+                <th>
+                    <h4><i>Contact Phone</i></h4>
+                </th>
+                <th>
+                    <h4><i>Prefferable Language</i></h4>
+                </th>
+
+            </tr>
+
+
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.DisplayFor(modelItem => Model.CompanyName)
+                            @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.DisplayFor(modelItem => Model.CompanyWebsite)
+                            @Html.ValidationMessageFor(model => model.CompanyWebsite, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.DisplayFor(modelItem => Model.ContactName)
+                            @Html.ValidationMessageFor(model => model.ContactName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.DisplayFor(modelItem => Model.ContactPhone)
+                            @Html.ValidationMessageFor(model => model.ContactPhone, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.DisplayFor(modelItem => Model.LanguageId)
+                            @Html.ValidationMessageFor(model => model.LanguageId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+
+            </tr>
+        </table>
+
+
+
+        <h3><b>Company Description</b></h3>
+
+        <table class="table">
+
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.DisplayFor(modelItem => Model.CompanyDescription)
+                            @Html.ValidationMessageFor(model => model.CompanyDescription, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <h3><b>Location of Your Company</b></h3>
+        <table class="table">
+            <tr>
+                <th>
+                    <h4><i>Country(Code)</i></h4>
+                </th>
+                <th>
+                    <h4><i>Province</i></h4>
+                </th>
+                <th>
+                    <h4><i>City</i></h4>
+                </th>
+                <th>
+                    <h4><i>Address</i></h4>
+                </th>
+                <th>
+                    <h4><i>Postal Code</i></h4>
+                </th>
+
+            </tr>
+
+
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.DisplayFor(modelItem => Model.Country)
+                            @Html.ValidationMessageFor(model => model.Country, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.DisplayFor(modelItem => Model.Province)
+                            @Html.ValidationMessageFor(model => model.Province, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.DisplayFor(modelItem => Model.City)
+                            @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.DisplayFor(modelItem => Model.Street)
+                            @Html.ValidationMessageFor(model => model.Street, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.DisplayFor(modelItem => Model.Postal_Code)
+                            @Html.ValidationMessageFor(model => model.Postal_Code, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+
+            </tr>
+        </table>
+
+    </div>
+
+
+    <div>
+        @Html.ActionLink("My Profile Management Page", "CvmPlayer", "Company_Login")
+    </div>
+
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

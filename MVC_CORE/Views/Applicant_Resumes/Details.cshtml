@@ -1,0 +1,42 @@
+﻿@model DAL.Applicant_Resumes
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Applicant_Resumes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Resume)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resume)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Last_Updated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Last_Updated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Applicant_Profiles.Currency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Applicant_Profiles.Currency)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

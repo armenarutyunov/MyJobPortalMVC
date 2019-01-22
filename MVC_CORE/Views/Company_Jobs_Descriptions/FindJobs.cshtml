@@ -1,0 +1,80 @@
+﻿@model IEnumerable<DAL.Company_Jobs_Descriptions>
+
+@{
+
+    ViewBag.Title = "FindJobs";
+}
+
+<h2>Use Keywords To Find Positions You Are Interested In.</h2>
+
+@*----Version, when Javascript code catches button click and launcing ShowJobs method by url address, with partial view embeded in this page--*@
+@*<div class="form-horizontal">
+        <div class="form-group">
+
+            <div class="col-md-10">
+                @Html.TextBox("FindJobs", "Enter Name", htmlAttributes: new { @class = "control-label col-md-2" })<br /><br />
+                @Html.ActionLink("Find", "ShowJobs", "Company_Jobs_Descriptions", new { id = "FindJobsLink" })
+                @Html.ActionLink("Find", "ShowJobs", "Company_Jobs_Descriptions", new { s = "anag" })
+
+            <button id="FindJobsButton">Find</button>
+           </div>
+        </div>
+    </div><br /><br />
+    <div id="ListOfFoundJobs"></div><br />*@
+@*@Scripts.Render("~/MyScripts/FindJobs.js")*@
+@*-----------------------------------------------------------------------------------------------------------------------------------*@
+
+
+@using (Html.BeginForm("FindJobs", "Company_Jobs_Descriptions", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="text" name="parameterName" id="ls" class=" form-control" /><br />
+                @*<button class="btn btn-info" type="submit">Find</button>*@
+            </div>
+            <div class="col-md-10">
+                <div>
+                    <input type="submit" value="Find" class="btn btn-default" /> @*<div class="col-md-offset-2 col-md-10">*@
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<br />
+<table class="table">
+    <tr>
+        <th>
+            Position
+        </th>
+        <th>
+            Short Description
+        </th>
+        <th>
+            Submission 
+        </th>
+      
+    </tr>
+    @*-----------------------------------------------------------------------------------*@
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Job_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Job_Descriptions)
+            </td>
+            <td>
+                @Html.ActionLink("Apply Now", "AplyForJob", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

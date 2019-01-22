@@ -1,0 +1,207 @@
+﻿@using MVC_CORE.Models
+@model CompanyVM
+@{
+    ViewBag.Title = "Create Company Profile";
+}
+
+<h2 style="color: orange">Create Your Own Profile!</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="form-horizontal">
+        <h3><b>Main Parameters</b></h3>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <table class="table">
+            <tr>
+                <th>
+                    <h4><i>Company Name</i></h4>
+                </th>
+                <th>
+                    <h4><i>Company Website</i></h4>
+                </th>
+                <th>
+                    <h4><i>Contact Name</i></h4>
+                </th>
+                <th>
+                    <h4><i>Contact Phone</i></h4>
+                </th>
+                <th>
+                    <h4><i>Prefferable Language</i></h4>
+                </th>
+
+            </tr>
+
+
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.CompanyName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.CompanyWebsite, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.CompanyWebsite, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.ContactName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ContactName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.ContactPhone, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ContactPhone, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.DropDownList("LanguageId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.LanguageId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+
+            </tr>
+        </table>
+
+
+
+        <h3><b>Company Description</b></h3>
+
+        <table class="table">
+
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.CompanyDescription, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.CompanyDescription, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <h3><b>Location of Your Company</b></h3>
+        <table class="table">
+            <tr>
+                <th>
+                    <h4><i>Country(Code)</i></h4>
+                </th>
+                <th>
+                    <h4><i>Province</i></h4>
+                </th>
+                <th>
+                    <h4><i>City</i></h4>
+                </th>
+                <th>
+                    <h4><i>Address</i></h4>
+                </th>
+                <th>
+                    <h4><i>Postal Code</i></h4>
+                </th>
+
+            </tr>
+
+
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @*@Html.DropDownList("Country", ViewData["Country"] as List<SelectListItem>, htmlAttributes: new { @class = "form-control" })*@
+                            @Html.DropDownList("Country", null, htmlAttributes: new { @class = "form-control" })
+                            @*@Html.EditorFor(model => model.Country, new { htmlAttributes = new { @class = "form-control" } })*@
+                            @Html.ValidationMessageFor(model => model.Country, "", new { @class = "text-danger" })
+                            @*@Html.DropDownListFor(model=>model.Country, (IEnumerable<SelectListItem>)ViewBag.Country,"Country Code")*@
+                        </div>
+                    </div>
+                </td>
+
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.DropDownList("Province", new SelectList(string.Empty, "Value", "Text"), "--Please Select a State--", htmlAttributes: new { @class = "form-control" })
+                            @*@Html.DropDownList("Province", null, htmlAttributes: new { @class = "form-control" })*@
+                            @*@Html.EditorFor(model => model.Province, new { htmlAttributes = new { @class = "form-control" } })*@
+                            @Html.ValidationMessageFor(model => model.Province, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.DropDownList("City", new SelectList(string.Empty, "Value", "Text"), "--Please Select a City--", htmlAttributes: new { @class = "form-control" } )
+                            @*@Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })*@
+                            @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Street, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Street, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Postal_Code, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Postal_Code, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+
+            </tr>
+        </table>
+
+
+
+
+
+
+
+
+
+        <table class="table">
+            <tr>
+                <td>
+
+                    <input type="submit" value="Create" style="font-size:20px; font-weight:500; color: orange" class="btn btn-default" />
+
+                </td>
+            </tr>
+        </table>
+
+    </div>
+}
+
+@*<div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@
+
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/CatchDropDowns.js")
+}

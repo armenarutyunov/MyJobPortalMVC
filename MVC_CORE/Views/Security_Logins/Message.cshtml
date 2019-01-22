@@ -1,0 +1,27 @@
+﻿@using DAL
+@model Security_Logins
+@{
+    ViewBag.Title = "Application Message";
+}
+
+<h1>@ViewBag.Reason</h1>
+<h1>@TempData["Message"]</h1>
+ 
+                            <div class="jumbotron">
+
+
+
+                                
+                                    @{int an = (int)TempData["FromAction"]; }
+                                    @if (an == 11)
+                                    {@Html.ActionLink("Back To Jobs List", "ShowAll", "Job")}
+                                    @if (an == 14)
+                                    {
+                                    <p>"We Hope To See You Again! Come Back!"</p>}
+                                    @if (an == 12)
+                                    {<p>"We Hope To See You Again! Come Back!"</p>}
+                                    <br />
+                                @Html.ActionLink("Back To Home Page", "Index", "Home")
+                                    
+                                </div>
+

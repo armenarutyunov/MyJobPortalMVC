@@ -1,0 +1,13 @@
+﻿@using MVC_CORE.Models
+@model Admin
+@{
+    ViewBag.Title = "Error Message";
+}
+
+<h1>@ViewBag.Reason</h1>
+<div class="jumbotron">
+
+    <p class="lead">Please, Try One More Time!</p>
+    <p> @Html.ActionLink("Sign Up Again", "Create", "Security_Logins") </p>
+    <p> @Html.ActionLink("Back To Home Page", "Index", "Home") </p>
+</div>

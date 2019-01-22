@@ -1,0 +1,557 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JOB_PORTAL_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Applicant_Educations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Applicant" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Major" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Certificate_Diploma" Type="nvarchar" MaxLength="100" />
+    <Property Name="Start_Date" Type="date" />
+    <Property Name="Completion_Date" Type="date" />
+    <Property Name="Completion_Percent" Type="tinyint" />
+    <Property Name="Time_Stamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Applicant_Job_Applications">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Applicant" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Job" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Application_Date" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="Time_Stamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Applicant_Profiles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Login" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Current_Salary" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Current_Rate" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Currency" Type="char" MaxLength="10" />
+    <Property Name="Country_Code" Type="char" MaxLength="10" />
+    <Property Name="State_Province_Code" Type="char" MaxLength="10" />
+    <Property Name="Street_Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="City_Town" Type="nvarchar" MaxLength="100" />
+    <Property Name="Zip_Postal_Code" Type="char" MaxLength="20" />
+    <Property Name="Time_Stamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Applicant_Resumes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Applicant" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Resume" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Last_Updated" Type="datetime2" Precision="7" />
+  </EntityType>
+  <EntityType Name="Applicant_Skills">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Applicant" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Skill" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Skill_Level" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="Start_Month" Type="tinyint" Nullable="false" />
+    <Property Name="Start_Year" Type="int" Nullable="false" />
+    <Property Name="End_Month" Type="tinyint" Nullable="false" />
+    <Property Name="End_Year" Type="int" Nullable="false" />
+    <Property Name="Time_Stamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Applicant_Work_History">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Applicant" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Company_Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Country_Code" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="Location" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Job_Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Job_Description" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Start_Month" Type="smallint" Nullable="false" />
+    <Property Name="Start_Year" Type="int" Nullable="false" />
+    <Property Name="End_Month" Type="smallint" Nullable="false" />
+    <Property Name="End_Year" Type="int" Nullable="false" />
+    <Property Name="Time_Stamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Company_Descriptions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Company" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LanguageID" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="Company_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Company_Description" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="Time_Stamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Company_Job_Educations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Job" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Major" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Importance" Type="smallint" Nullable="false" />
+    <Property Name="Time_Stamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Company_Job_Skills">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Job" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Skill" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Skill_Level" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Importance" Type="int" Nullable="false" />
+    <Property Name="Time_Stamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Company_Jobs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Company" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Profile_Created" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="Is_Inactive" Type="bit" Nullable="false" />
+    <Property Name="Is_Company_Hidden" Type="bit" Nullable="false" />
+    <Property Name="Time_Stamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Company_Jobs_Descriptions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Job" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Job_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Job_Descriptions" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Time_Stamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Company_Locations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Company" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Country_Code" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="State_Province_Code" Type="char" MaxLength="10" />
+    <Property Name="Street_Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="City_Town" Type="nvarchar" MaxLength="100" />
+    <Property Name="Zip_Postal_Code" Type="char" MaxLength="20" />
+    <Property Name="Time_Stamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Company_Profiles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Registration_Date" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="Company_Website" Type="varchar" MaxLength="100" />
+    <Property Name="Contact_Phone" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Contact_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Company_Logo" Type="varbinary(max)" />
+    <Property Name="Time_Stamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Security_Logins">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Login" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Created_Date" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="Password_Update_Date" Type="datetime2" Precision="7" />
+    <Property Name="Agreement_Accepted_Date" Type="datetime2" Precision="7" />
+    <Property Name="Is_Locked" Type="bit" Nullable="false" />
+    <Property Name="Is_Inactive" Type="bit" Nullable="false" />
+    <Property Name="Email_Address" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone_Number" Type="varchar" MaxLength="20" />
+    <Property Name="Full_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Force_Change_Password" Type="bit" Nullable="false" />
+    <Property Name="Prefferred_Language" Type="char" MaxLength="10" />
+    <Property Name="Time_Stamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Security_Logins_Log">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Login" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Source_IP" Type="char" MaxLength="15" Nullable="false" />
+    <Property Name="Logon_Date" Type="datetime" Nullable="false" />
+    <Property Name="Is_Succesful" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Security_Logins_Roles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Login" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Role" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Time_Stamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Security_Roles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Role" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Is_Inactive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="System_Country_Codes">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="System_Language_Codes">
+    <Key>
+      <PropertyRef Name="LanguageID" />
+    </Key>
+    <Property Name="LanguageID" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Native_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Applicant_Educations_Applicant_Profiles">
+    <End Role="Applicant_Profiles" Type="Self.Applicant_Profiles" Multiplicity="1" />
+    <End Role="Applicant_Educations" Type="Self.Applicant_Educations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applicant_Profiles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Applicant_Educations">
+        <PropertyRef Name="Applicant" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Applicant_Job_Applications_Applicant_Profiles">
+    <End Role="Applicant_Profiles" Type="Self.Applicant_Profiles" Multiplicity="1" />
+    <End Role="Applicant_Job_Applications" Type="Self.Applicant_Job_Applications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applicant_Profiles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Applicant_Job_Applications">
+        <PropertyRef Name="Applicant" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Applicant_Job_Applications_Company_Jobs">
+    <End Role="Company_Jobs" Type="Self.Company_Jobs" Multiplicity="1" />
+    <End Role="Applicant_Job_Applications" Type="Self.Applicant_Job_Applications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company_Jobs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Applicant_Job_Applications">
+        <PropertyRef Name="Job" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Applicant_Profiles_Security_Logins">
+    <End Role="Security_Logins" Type="Self.Security_Logins" Multiplicity="1" />
+    <End Role="Applicant_Profiles" Type="Self.Applicant_Profiles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Security_Logins">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Applicant_Profiles">
+        <PropertyRef Name="Login" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Applicant_Profiles_System_Country_Codes">
+    <End Role="System_Country_Codes" Type="Self.System_Country_Codes" Multiplicity="0..1" />
+    <End Role="Applicant_Profiles" Type="Self.Applicant_Profiles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="System_Country_Codes">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Applicant_Profiles">
+        <PropertyRef Name="Country_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Applicant_Resumes_Applicant_Profiles">
+    <End Role="Applicant_Profiles" Type="Self.Applicant_Profiles" Multiplicity="1" />
+    <End Role="Applicant_Resumes" Type="Self.Applicant_Resumes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applicant_Profiles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Applicant_Resumes">
+        <PropertyRef Name="Applicant" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Applicant_Skills_Applicant_Profiles">
+    <End Role="Applicant_Profiles" Type="Self.Applicant_Profiles" Multiplicity="1" />
+    <End Role="Applicant_Skills" Type="Self.Applicant_Skills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applicant_Profiles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Applicant_Skills">
+        <PropertyRef Name="Applicant" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Applicant_Work_Experiences_Applicant_Profiles">
+    <End Role="Applicant_Profiles" Type="Self.Applicant_Profiles" Multiplicity="1" />
+    <End Role="Applicant_Work_History" Type="Self.Applicant_Work_History" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applicant_Profiles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Applicant_Work_History">
+        <PropertyRef Name="Applicant" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Applicant_Work_History_System_Country_Codes">
+    <End Role="System_Country_Codes" Type="Self.System_Country_Codes" Multiplicity="1" />
+    <End Role="Applicant_Work_History" Type="Self.Applicant_Work_History" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="System_Country_Codes">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Applicant_Work_History">
+        <PropertyRef Name="Country_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_Descriptions_Company_Profiles">
+    <End Role="Company_Profiles" Type="Self.Company_Profiles" Multiplicity="1" />
+    <End Role="Company_Descriptions" Type="Self.Company_Descriptions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company_Profiles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company_Descriptions">
+        <PropertyRef Name="Company" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_Descriptions_System_Language_Codes">
+    <End Role="System_Language_Codes" Type="Self.System_Language_Codes" Multiplicity="1" />
+    <End Role="Company_Descriptions" Type="Self.Company_Descriptions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="System_Language_Codes">
+        <PropertyRef Name="LanguageID" />
+      </Principal>
+      <Dependent Role="Company_Descriptions">
+        <PropertyRef Name="LanguageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_Job_Educations_Company_Jobs">
+    <End Role="Company_Jobs" Type="Self.Company_Jobs" Multiplicity="1" />
+    <End Role="Company_Job_Educations" Type="Self.Company_Job_Educations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company_Jobs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company_Job_Educations">
+        <PropertyRef Name="Job" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_Job_Skills_Company_Jobs">
+    <End Role="Company_Jobs" Type="Self.Company_Jobs" Multiplicity="1" />
+    <End Role="Company_Job_Skills" Type="Self.Company_Job_Skills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company_Jobs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company_Job_Skills">
+        <PropertyRef Name="Job" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_Jobs_Company_Profiles">
+    <End Role="Company_Profiles" Type="Self.Company_Profiles" Multiplicity="1" />
+    <End Role="Company_Jobs" Type="Self.Company_Jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company_Profiles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company_Jobs">
+        <PropertyRef Name="Company" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_Jobs_Descriptions_Company_Jobs">
+    <End Role="Company_Jobs" Type="Self.Company_Jobs" Multiplicity="1" />
+    <End Role="Company_Jobs_Descriptions" Type="Self.Company_Jobs_Descriptions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company_Jobs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company_Jobs_Descriptions">
+        <PropertyRef Name="Job" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_Locations_Company_Profiles">
+    <End Role="Company_Profiles" Type="Self.Company_Profiles" Multiplicity="1" />
+    <End Role="Company_Locations" Type="Self.Company_Locations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company_Profiles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company_Locations">
+        <PropertyRef Name="Company" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Security_Logins_Log_Security_Logins">
+    <End Role="Security_Logins" Type="Self.Security_Logins" Multiplicity="1" />
+    <End Role="Security_Logins_Log" Type="Self.Security_Logins_Log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Security_Logins">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Security_Logins_Log">
+        <PropertyRef Name="Login" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Security_Logins_Roles_Security_Logins">
+    <End Role="Security_Logins" Type="Self.Security_Logins" Multiplicity="1" />
+    <End Role="Security_Logins_Roles" Type="Self.Security_Logins_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Security_Logins">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Security_Logins_Roles">
+        <PropertyRef Name="Login" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Security_Logins_Roles_Security_Roles">
+    <End Role="Security_Roles" Type="Self.Security_Roles" Multiplicity="1" />
+    <End Role="Security_Logins_Roles" Type="Self.Security_Logins_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Security_Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Security_Logins_Roles">
+        <PropertyRef Name="Role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="JOB_PORTAL_DBModelStoreContainer">
+    <EntitySet Name="Applicant_Educations" EntityType="Self.Applicant_Educations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Applicant_Job_Applications" EntityType="Self.Applicant_Job_Applications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Applicant_Profiles" EntityType="Self.Applicant_Profiles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Applicant_Resumes" EntityType="Self.Applicant_Resumes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Applicant_Skills" EntityType="Self.Applicant_Skills" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Applicant_Work_History" EntityType="Self.Applicant_Work_History" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company_Descriptions" EntityType="Self.Company_Descriptions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company_Job_Educations" EntityType="Self.Company_Job_Educations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company_Job_Skills" EntityType="Self.Company_Job_Skills" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company_Jobs" EntityType="Self.Company_Jobs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company_Jobs_Descriptions" EntityType="Self.Company_Jobs_Descriptions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company_Locations" EntityType="Self.Company_Locations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company_Profiles" EntityType="Self.Company_Profiles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Security_Logins" EntityType="Self.Security_Logins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Security_Logins_Log" EntityType="Self.Security_Logins_Log" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Security_Logins_Roles" EntityType="Self.Security_Logins_Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Security_Roles" EntityType="Self.Security_Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="System_Country_Codes" EntityType="Self.System_Country_Codes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="System_Language_Codes" EntityType="Self.System_Language_Codes" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Applicant_Educations_Applicant_Profiles" Association="Self.FK_Applicant_Educations_Applicant_Profiles">
+      <End Role="Applicant_Profiles" EntitySet="Applicant_Profiles" />
+      <End Role="Applicant_Educations" EntitySet="Applicant_Educations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Applicant_Job_Applications_Applicant_Profiles" Association="Self.FK_Applicant_Job_Applications_Applicant_Profiles">
+      <End Role="Applicant_Profiles" EntitySet="Applicant_Profiles" />
+      <End Role="Applicant_Job_Applications" EntitySet="Applicant_Job_Applications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Applicant_Job_Applications_Company_Jobs" Association="Self.FK_Applicant_Job_Applications_Company_Jobs">
+      <End Role="Company_Jobs" EntitySet="Company_Jobs" />
+      <End Role="Applicant_Job_Applications" EntitySet="Applicant_Job_Applications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Applicant_Profiles_Security_Logins" Association="Self.FK_Applicant_Profiles_Security_Logins">
+      <End Role="Security_Logins" EntitySet="Security_Logins" />
+      <End Role="Applicant_Profiles" EntitySet="Applicant_Profiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Applicant_Profiles_System_Country_Codes" Association="Self.FK_Applicant_Profiles_System_Country_Codes">
+      <End Role="System_Country_Codes" EntitySet="System_Country_Codes" />
+      <End Role="Applicant_Profiles" EntitySet="Applicant_Profiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Applicant_Resumes_Applicant_Profiles" Association="Self.FK_Applicant_Resumes_Applicant_Profiles">
+      <End Role="Applicant_Profiles" EntitySet="Applicant_Profiles" />
+      <End Role="Applicant_Resumes" EntitySet="Applicant_Resumes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Applicant_Skills_Applicant_Profiles" Association="Self.FK_Applicant_Skills_Applicant_Profiles">
+      <End Role="Applicant_Profiles" EntitySet="Applicant_Profiles" />
+      <End Role="Applicant_Skills" EntitySet="Applicant_Skills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Applicant_Work_Experiences_Applicant_Profiles" Association="Self.FK_Applicant_Work_Experiences_Applicant_Profiles">
+      <End Role="Applicant_Profiles" EntitySet="Applicant_Profiles" />
+      <End Role="Applicant_Work_History" EntitySet="Applicant_Work_History" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Applicant_Work_History_System_Country_Codes" Association="Self.FK_Applicant_Work_History_System_Country_Codes">
+      <End Role="System_Country_Codes" EntitySet="System_Country_Codes" />
+      <End Role="Applicant_Work_History" EntitySet="Applicant_Work_History" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_Descriptions_Company_Profiles" Association="Self.FK_Company_Descriptions_Company_Profiles">
+      <End Role="Company_Profiles" EntitySet="Company_Profiles" />
+      <End Role="Company_Descriptions" EntitySet="Company_Descriptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_Descriptions_System_Language_Codes" Association="Self.FK_Company_Descriptions_System_Language_Codes">
+      <End Role="System_Language_Codes" EntitySet="System_Language_Codes" />
+      <End Role="Company_Descriptions" EntitySet="Company_Descriptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_Job_Educations_Company_Jobs" Association="Self.FK_Company_Job_Educations_Company_Jobs">
+      <End Role="Company_Jobs" EntitySet="Company_Jobs" />
+      <End Role="Company_Job_Educations" EntitySet="Company_Job_Educations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_Job_Skills_Company_Jobs" Association="Self.FK_Company_Job_Skills_Company_Jobs">
+      <End Role="Company_Jobs" EntitySet="Company_Jobs" />
+      <End Role="Company_Job_Skills" EntitySet="Company_Job_Skills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_Jobs_Company_Profiles" Association="Self.FK_Company_Jobs_Company_Profiles">
+      <End Role="Company_Profiles" EntitySet="Company_Profiles" />
+      <End Role="Company_Jobs" EntitySet="Company_Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_Jobs_Descriptions_Company_Jobs" Association="Self.FK_Company_Jobs_Descriptions_Company_Jobs">
+      <End Role="Company_Jobs" EntitySet="Company_Jobs" />
+      <End Role="Company_Jobs_Descriptions" EntitySet="Company_Jobs_Descriptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_Locations_Company_Profiles" Association="Self.FK_Company_Locations_Company_Profiles">
+      <End Role="Company_Profiles" EntitySet="Company_Profiles" />
+      <End Role="Company_Locations" EntitySet="Company_Locations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Security_Logins_Log_Security_Logins" Association="Self.FK_Security_Logins_Log_Security_Logins">
+      <End Role="Security_Logins" EntitySet="Security_Logins" />
+      <End Role="Security_Logins_Log" EntitySet="Security_Logins_Log" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Security_Logins_Roles_Security_Logins" Association="Self.FK_Security_Logins_Roles_Security_Logins">
+      <End Role="Security_Logins" EntitySet="Security_Logins" />
+      <End Role="Security_Logins_Roles" EntitySet="Security_Logins_Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Security_Logins_Roles_Security_Roles" Association="Self.FK_Security_Logins_Roles_Security_Roles">
+      <End Role="Security_Roles" EntitySet="Security_Roles" />
+      <End Role="Security_Logins_Roles" EntitySet="Security_Logins_Roles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

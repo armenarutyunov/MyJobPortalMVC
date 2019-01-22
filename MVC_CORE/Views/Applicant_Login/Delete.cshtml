@@ -1,0 +1,84 @@
+﻿@model DAL.Security_Logins
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Details Of Your Profile</h2>
+
+<h3>Are You Sure You Want To Delete Your Profile?</h3>
+<h2><b><u>Be Inform, That All Your Personal Infromation, Including Job's Submission, Will Be Deleted As Well!</u></b></h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Login
+        </th>
+        <th>
+            Password
+        </th>
+        <th>
+            Email Address
+        </th>
+        <th>
+            Phone Number
+        </th>
+        <th>
+            Full Name
+        </th>
+        <th>
+            Preffered Language
+        </th>
+        <th>
+            Date of Creation
+        </th>
+
+
+    </tr>
+
+
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Login)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Email_Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Phone_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Full_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Prefferred_Language)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Created_Date)
+        </td>
+
+
+    </tr>
+
+
+</table>
+<br/>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default" />
+    </div>
+}
+
+@Html.ActionLink("Edit", "Edit", "Applicant_Login", new { id = Model.Id }) |
+
+@*@Html.ActionLink("Delete", "Delete", "Applicant_Login", new { id = Model.Id }) |*@
+
+@Html.ActionLink("Back To Home Page", "Index", "Home") |
+

@@ -1,0 +1,58 @@
+﻿@model DAL.Company_Jobs
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Company_Jobs</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Profile_Created)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profile_Created)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Is_Inactive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Is_Inactive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Is_Company_Hidden)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Is_Company_Hidden)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Time_Stamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Time_Stamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Company_Profiles.Company_Website)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Company_Profiles.Company_Website)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

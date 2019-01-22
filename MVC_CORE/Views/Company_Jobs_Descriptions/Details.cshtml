@@ -1,0 +1,50 @@
+﻿@model DAL.Company_Jobs_Descriptions
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Company_Jobs_Descriptions</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Job_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job_Descriptions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job_Descriptions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Time_Stamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Time_Stamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Company_Jobs.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Company_Jobs.Id)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

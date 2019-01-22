@@ -1,0 +1,484 @@
+﻿@using MVC_CORE.Models
+@model Company
+@{
+    ViewBag.Title = "CreateEdit";
+}
+
+
+<h2 style="color: orange">Your Current Data</h2>
+<div class="form-horizontal">
+    <h3><b>Required Parameters</b></h3>
+
+    <table class="table">
+        <tr>
+            <th>
+                <h4><i>Company Name</i></h4>
+            </th>
+            <th>
+                <h4><i>Company Description</i></h4>
+            </th>
+            <th>
+                <h4><i>Company Website</i></h4>
+            </th>
+            <th>
+                <h4><i>Contact Name</i></h4>
+            </th>
+            <th>
+                <h4><i>Contact Phone</i></h4>
+            </th>
+
+        </tr>
+        <tr>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <h5>  @Html.DisplayFor(modelItem => Model.EnName.Company_Name)</h5>
+                        <br /> <h4><i>Registration Date</i></h4>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <h5>
+                            @Html.DisplayFor(modelItem => Model.EnName.Company_Description)
+                        </h5>
+                        <br /><h4>@Html.DisplayFor(modelItem => Model.Profile.Registration_Date)</h4>
+                    </div>
+                </div>
+
+            </td>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10"><h5>@Html.DisplayFor(modelItem => Model.Profile.Company_Website)</h5></div>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10"><h5>@Html.DisplayFor(modelItem => Model.Profile.Contact_Name)</h5></div>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10"><h5>@Html.DisplayFor(modelItem => Model.Profile.Contact_Phone)</h5></div>
+                </div>
+            </td>
+
+        </tr>
+    </table>
+    <h3><b>International Names And Descriptions</b></h3>
+    <table class="table" style="text-align:justify">
+        <tr>
+            <th>
+                <h3 style="color: green"><i><b>German</b></i></h3>
+            </th>
+            <th>
+                <h3></h3>
+            </th>
+            <th>
+                <h3 style="color: green"><i><b>French</b></i></h3>
+            </th>
+            <th>
+                <h3></h3>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <h4><i>Company Name</i></h4>
+            </th>
+            <th>
+                <h4><i>Company Description</i></h4>
+            </th>
+            <th>
+                <h4><i>Company Name</i></h4>
+            </th>
+            <th>
+                <h4><i>Company Description</i></h4>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10"><h5>@Html.DisplayFor(modelItem => Model.DeName.Company_Name)</h5></div>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10"><h5>@Html.DisplayFor(modelItem => Model.DeName.Company_Description)</h5></div>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10"><h5>@Html.DisplayFor(modelItem => Model.FrName.Company_Name)</h5></div>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10"><h5>@Html.DisplayFor(modelItem => Model.FrName.Company_Description)</h5></div>
+                </div>
+            </td>
+
+        </tr>
+    </table>
+    <h3><b>Your Locations</b></h3>
+   
+    <table class="table">
+        <tr>
+            <th>
+                <h4><i>Country(Code)</i></h4>
+            </th>
+            <th>
+                <h4><i>Province</i></h4>
+            </th>
+            <th>
+                <h4><i>City</i></h4>
+            </th>
+            <th>
+                <h4><i>Address</i></h4>
+            </th>
+            <th>
+                <h4><i>Postal Code</i></h4>
+            </th>
+            <th>
+                <h4><i>Delete</i></h4>
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model.Locations)
+        {
+
+        <tr>
+            @using (Html.BeginForm("DeleteLocation", "Company", new { id = item.Id }, FormMethod.Post))
+
+            {@Html.AntiForgeryToken()
+
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10"><h5>@Html.DisplayFor(modelItem => item.Country_Code)</h5></div>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10"><h5>@Html.DisplayFor(modelItem => item.State_Province_Code)</h5></div>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10"><h5>@Html.DisplayFor(modelItem => item.City_Town)</h5></div>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10"><h5>@Html.DisplayFor(modelItem => item.Street_Address)</h5></div>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10"><h5>@Html.DisplayFor(modelItem => item.Zip_Postal_Code)</h5></div>
+                </div>
+            </td>
+            <td>
+                <input type="submit" value="Delete" style="font-size:20px; font-weight:500; color: orange" class="btn btn-default" />
+            </td>
+
+             }
+        </tr>
+         }
+
+            </table>
+    
+</div>
+
+<div class="form-horizontal">
+    <h2 style="color: orange">Data Entry And Corrections</h2>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <h3><b>Create or Correct Company's Main Data</b></h3>
+    <table class="table">
+        <tr>
+            <th>
+                <h4><i>Company Name</i></h4>
+            </th>
+            <th>
+                <h4><i>Company Description</i></h4>
+            </th>
+            <th>
+                <h4><i>Company Website</i></h4>
+            </th>
+            <th>
+                <h4><i>Contact Name</i></h4>
+            </th>
+            <th>
+                <h4><i>Contact Phone</i></h4>
+            </th>
+
+
+        </tr>
+
+        @using (Html.BeginForm("CreateEdit", "Company", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.EnName.Company_Name, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.EnName.Company_Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div><br />
+                    <input type="submit" value="Submit" style="font-size:20px; font-weight:500; color: orange" class="btn btn-default" />
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.EnName.Company_Description, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.EnName.Company_Description, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Profile.Company_Website, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Profile.Company_Website, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Profile.Contact_Name, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Profile.Contact_Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Profile.Contact_Phone, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Profile.Contact_Phone, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+        }
+    </table>
+
+
+    @if (@ViewBag.HasProfile)
+    {
+
+    
+
+        <h3><b>Add, Correct or Delete Your International Name And Description</b></h3>
+
+
+
+    <table class="table" style="text-align:justify">
+        <tr>
+            <th>
+                <h3><i>Language</i></h3>
+            </th>
+            <th>
+                <h3><i>Company Name</i></h3>
+            </th>
+            <th>
+                <h3><i>Company Description</i></h3>
+            </th>
+            <th>
+                <h3><i>Add/Correct</i></h3>
+            </th>
+            <th>
+                <h3><i>Delete</i></h3>
+            </th>
+
+        </tr>
+
+        @using (Html.BeginForm("DeNameCE", "Company", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+        <tr>
+            <td>
+                <div>
+                    <h3><i>German</i></h3>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10" style="padding-top:18px">
+                        @*@Html.TextBoxFor(model => model.DeName.Company_Name, Model.DeName.Company_Name)*@
+                        @Html.EditorFor(model => model.DeName.Company_Name, Model.DeName.Company_Name, new { htmlAttributes = new { @class = "form-control", @style="color:black" } })
+                        @Html.ValidationMessageFor(model => model.DeName.Company_Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10" style="padding-top:18px">
+                        @*@Html.TextBoxFor(model => model.DeName.Company_Description, Model.DeName.Company_Description)*@
+                        @Html.EditorFor(model => model.DeName.Company_Description, Model.DeName.Company_Description, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.DeName.Company_Description, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div style="padding-top:13px">
+                    @*@Html.ActionLink("Submit", "DeNameCE", new { name = Model.DeName.Company_Name, description = Model.DeName.Company_Description })*@
+                    <input type="submit" value="Submit" style="font-size:20px; font-weight:500; color: orange" class="btn btn-default" />
+                </div>
+            </td>
+            <td>
+                <div style="padding-top:13px">
+                    @Html.ActionLink("Delete", "NameDelete", "Company", new { id = Model.DeName.Id }, null)
+                </div>
+            </td>
+
+        </tr>
+        }
+        @using (Html.BeginForm("FrNameCE", "Company", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+        <tr>
+            <td>
+
+                <div>
+                    <h3 style="text-align:start"><i>French</i></h3>
+                </div>
+
+            </td>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10" style="padding-top:18px">
+                        @Html.EditorFor(model => model.FrName.Company_Name, Model.FrName.Company_Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.FrName.Company_Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10" style="padding-top:18px">
+                        @Html.EditorFor(model => model.FrName.Company_Description, Model.FrName.Company_Description, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.FrName.Company_Description, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div style="padding-top:13px">
+                    <input type="submit" value="Submit" style="font-size:20px; font-weight:500; color: orange" class="btn btn-default" />
+                </div>
+            </td>
+            <td>
+                <div style="padding-top:13px">
+                    @Html.ActionLink("Delete", "NameDelete", "Company", new { id = Model.FrName.Id }, null)
+                </div>
+            </td>
+        </tr>
+        }
+    </table>
+
+    <h3><b>Add New or Corrected Company's Location</b></h3>
+    <table class="table">
+        <tr>
+            <th>
+                <h4><i>Country(Code)</i></h4>
+            </th>
+            <th>
+                <h4><i>Province</i></h4>
+            </th>
+            <th>
+                <h4><i>City</i></h4>
+            </th>
+            <th>
+                <h4><i>Address</i></h4>
+            </th>
+            <th>
+                <h4><i>Postal Code</i></h4>
+            </th>
+
+        </tr>
+
+        @using (Html.BeginForm("AddLocation", "Company", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                           
+                            @*@Html.DropDownList("Country", null, htmlAttributes: new { @class = "form-control" })*@
+                            @Html.DropDownListFor(model=>model.Location.Country_Code,null, "--Please, Select a Country--", htmlAttributes: new {@id="Country", @class = "form-control" })
+                            @*@Html.EditorFor(model => model.Location.Country_Code, new { htmlAttributes = new { @class = "form-control" } })*@
+                            @Html.ValidationMessageFor(model => model.Location.Country_Code, "", new { @class = "text-danger" })
+                            @*@Html.DropDownListFor(model=>model.Country, (IEnumerable<SelectListItem>)ViewBag.Country,"Country Code")*@
+                        </div>
+                    </div><br />
+                    <input type="submit" value="Add Location" style="font-size:20px; font-weight:500; color: orange" class="btn btn-default" />
+                </td>
+
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @*@Html.DropDownList("Province", new SelectList(string.Empty, "Value", "Text"), "--Please Select a State--", htmlAttributes: new { @class = "form-control" })*@
+                            @Html.DropDownListFor(model => model.Location.State_Province_Code, new SelectList(string.Empty, "Value", "Text"), "--Please Select a State--", htmlAttributes: new { @id = "Province", @class = "form-control" })
+                            @*@Html.DropDownList("Province", null, htmlAttributes: new { @class = "form-control" })*@
+                            @*@Html.EditorFor(model => model.Location.State_Province_Code, new { htmlAttributes = new { @class = "form-control" } })*@
+                            @Html.ValidationMessageFor(model => model.Location.State_Province_Code, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @*@Html.DropDownList("City", new SelectList(string.Empty, "Value", "Text"), "--Please Select a City--", htmlAttributes: new { @class = "form-control" })*@
+                            @Html.DropDownListFor(model => model.Location.City_Town, new SelectList(string.Empty, "Value", "Text"), "--Please Select a City--", htmlAttributes: new { @id = "City", @class = "form-control" })
+                            @*@Html.EditorFor(model => model.Location.City_Town, new { htmlAttributes = new { @class = "form-control" } })*@
+                            @Html.ValidationMessageFor(model => model.Location.City_Town, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Location.Street_Address, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Location.Street_Address, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Location.Zip_Postal_Code, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Location.Zip_Postal_Code, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </td>
+
+            </tr>
+        }
+    </table>
+
+
+
+
+
+
+
+
+
+   
+    }
+</div>
+
+
+    @*<div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>*@
+
+    @section Scripts
+{
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/Scripts/CatchDropDowns.js")
+    }
+

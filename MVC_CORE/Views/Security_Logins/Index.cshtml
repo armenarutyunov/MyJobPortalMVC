@@ -1,0 +1,72 @@
+﻿@model DAL.Security_Logins
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Congratulations, Your Account Has Been Registered!</h2>
+<h3>Here are Your Credentials</h3>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Login
+        </th>
+        <th>
+            Password
+        </th>
+        <th>
+            Email Address
+        </th>
+        <th>
+            Phone Number
+        </th>
+        <th>
+            Full Name
+        </th>
+        <th>
+            Preffered Language
+        </th>
+        <th>
+            Date of Creation
+        </th>
+
+
+    </tr>
+
+
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Login)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Email_Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Phone_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Full_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Prefferred_Language)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Created_Date)
+        </td>
+       
+
+    </tr>
+
+
+</table>
+
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+
+    @Html.ActionLink("Delete", "Delete", new { id = Model.Id }) |
+
+    @Html.ActionLink("Back To Home Page", "Index", "Home") |

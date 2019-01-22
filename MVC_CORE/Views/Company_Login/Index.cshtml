@@ -1,0 +1,20 @@
+﻿@using MVC_CORE.Models
+@model Admin
+@{
+    ViewBag.Title = "Company's Home Page";
+}
+    <h1>@ViewBag.Reason</h1>
+ <div class="jumbotron">
+    <h1>Hello, Dear Employer!</h1>
+    <p class="lead">Now You Can Proceed To All Of Your Resources!</p>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          
+
+            <li>@Html.ActionLink("My Profile Management Page", "CreateEdit", "Company", new { r = true }, null)</li>
+            <li>@Html.ActionLink("Show My List of Positions", "ShowAll", "Job")</li>
+            <li>@Html.ActionLink("Create New Position", "Create", "Job")</li>
+             
+        </ul>
+    </div>
+ </div>

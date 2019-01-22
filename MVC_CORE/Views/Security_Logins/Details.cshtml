@@ -1,0 +1,122 @@
+﻿@model DAL.Security_Logins
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Security_Logins</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Login)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Created_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Created_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password_Update_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password_Update_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Agreement_Accepted_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Agreement_Accepted_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Is_Locked)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Is_Locked)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Is_Inactive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Is_Inactive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email_Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email_Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone_Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Full_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Full_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Force_Change_Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Force_Change_Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prefferred_Language)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prefferred_Language)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Time_Stamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Time_Stamp)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

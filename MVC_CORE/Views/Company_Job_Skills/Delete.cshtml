@@ -1,0 +1,64 @@
+﻿@model DAL.Company_Job_Skills
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Company_Job_Skills</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Skill)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Skill)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Skill_Level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Skill_Level)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Importance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Importance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Time_Stamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Time_Stamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Company_Jobs.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Company_Jobs.Id)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,21 @@
+﻿@using MVC_CORE.Models
+@model Admin
+@{
+    ViewBag.Title = "Applicant's Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Hello, Dear Applicant!</h1>
+    <p class="lead">Now You Can Proceed To Your Personal Resources!</p>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
+            <li>@Html.ActionLink("My Profile", "Details", "Applicant_Login")</li>
+            <li>@Html.ActionLink("Skiils", "Index", "Personal_Skills")</li>
+            <li>@Html.ActionLink("Education", "Index", "Personal_Education")</li>
+            <li>@Html.ActionLink("Work History", "Index", "Personal_WorkHistory")</li>
+            <li>@Html.ActionLink("Resume", "Index", "Personal_Resume")</li>
+            <li>@Html.ActionLink("Applications", "Index", "Personal_Applications")</li>
+        </ul>
+    </div>
+</div>

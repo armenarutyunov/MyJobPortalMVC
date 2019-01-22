@@ -1,0 +1,70 @@
+﻿@model  MVC_CORE.Models.CompanyVM
+
+@{
+    ViewBag.Title = "First Enter";
+}
+
+<h1><b>Congratulations, You Have Registered!</b></h1>
+<h4>Every Time For Sign In Use Your's Company Website as a Login and Your Contact Phone as a Password.</h4>
+<h3><u>Your Current Profile</u></h3>
+
+<p>
+    @Html.ActionLink("Create ", "Create", "CompanyVM")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyWebsite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LanguageId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegistrationDate)
+        </th>
+        <th>Pick Up Action</th>
+    </tr>
+
+
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => Model.CompanyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.CompanyDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.CompanyWebsite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.ContactName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.ContactPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.LanguageId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.RegistrationDate)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit") |
+            @Html.ActionLink("Details", "Details") |
+            @Html.ActionLink("Delete", "Delete")
+        </td>*@
+    </tr>
+</table>
+<h3>For Mor Options</h3>@Html.ActionLink("Pass To Personal Page", "Index","Company_Login")

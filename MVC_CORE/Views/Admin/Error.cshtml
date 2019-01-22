@@ -1,0 +1,11 @@
+﻿@using MVC_CORE.Models
+@model Admin
+@{
+    ViewBag.Title = "Error Message";
+}
+
+<div class="jumbotron">
+    <h1>"Sorry, Seems That You Have Entered The Wrong Credentials!"</h1>
+    <p class="lead">Please, Try Again!</p>
+    <p> @Html.ActionLink("Login", "Login", "Admin") </p>
+</div>
